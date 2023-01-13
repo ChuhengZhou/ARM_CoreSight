@@ -94,6 +94,7 @@ ROM table is a link-like structure, where some entries may point to another ROM 
 ![image](images/ROM_table.png)
 
 The bit assignment of ROM table entry is:
+
 ![image](images/bit_assignment.png)
 
 Some non-configurable components as we discuss before won't be registered in ROM table, these are also called static or hidden components.
@@ -102,7 +103,7 @@ Some non-configurable components as we discuss before won't be registered in ROM
 
 Example shows four Cortex-A class cores and one Cortex-M class core.
 
-![image](images/example.topology.png)
+![image](images/example_topology.png)
 
 # CoreSight Access Library
 CoreSight Access Library (CSAL) is an open source project maintained by ARM official. It is for using CoreSight system from software.
