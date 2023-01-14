@@ -149,11 +149,10 @@ Add a new board:
   
 The common process of a registration function is:
 
-<br>
 1. Register all devices in any order.
-- All registered devices are maintained out of order in a link table. When a new device is registered, it will be added to the end of the link table. `cs_device` is used to represent a single device. `cs_device.next` points to the next device in link table. Link table starts at `global.device_top`, is also where devices traversing starts.<br>
-- Non-programmable components, like static funnel, doesn't need to be registered, but somehow replicator must to be created by `cs_atb_add_replicator()` and then registered according to existing examples?<br>
-- Can be done either manually via `cs_device_register()` or automatically via `cs_scan_romtable()`.<br>
+  - All registered devices are maintained out of order in a link table. When a new device is registered, it will be added to the end of the link table.`cs_device` represents a single device. `cs_device.next` points to the next device in link table. Link table starts at `global.device_top`, is also where devices traversing starts.
+  - Non-programmable components, like static funnel, doesn't need to be registered, but somehow replicator must to be created by `cs_atb_add_replicator()` and then registered according to existing examples?
+- Can be done either manually via `cs_device_register()` or automatically via `cs_scan_romtable()`.
 <br>
 2. Set CPU affinities if required.
    - Trace components (pmu, etm, cti) in same core will be linked together and registered in `cs_device.v.debug` by `cs_device_set_affinity()`.
