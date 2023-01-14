@@ -148,6 +148,7 @@ Add a new board:
 - Then write a new registration function. 
   
 The common process of a registration function is:
+
 <br>
 1. Register all devices in any order.
    - All registered devices are maintained out of order in a link table. When a new device is registered, it will be added to the end of the link table. `cs_device` is used to represent a single device. `cs_device.next` points to the next device in link table. Link table starts at `global.device_top`, is also where devices traversing starts.
@@ -166,7 +167,7 @@ The common process of a registration function is:
    - CTI connection will be registered in `cs_device.v.cti.src[CTI_MAX_IN_PORTS]` and `cs_device.v.cti.dst[CTI_MAX_IN_PORTS]`
    - Done by `cs_cti_connect_trigsrc()` and `cs_cti_connect_trigdst()`.
 <br>
-1. Register `cs_devices_t`, the structure contains all core devices used for tracing.
+5. Register `cs_devices_t`, the structure contains all core devices used for tracing.
    - Trace sink must be registered here. 
    - It's not necessary to register trace source components if we have already set their CPU affinities for them. This will be dnoe as well in the later trace configuration phase.
    - `cs_devices_t.cpu_id[]` indicates what type each core on the board is, e.g. Cortex-73. This is only used for printing debugging information as far as I know, not necessary.
