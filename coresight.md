@@ -367,11 +367,19 @@ cs_shutdown(); // Simply lock all devices
 
 # Referrence
 [ARM General Coresight 3.0 Specification](https://documentation-service.arm.com/static/622228598804d00769e9b23d?token=)
+
 [ARM TMC Specification](https://documentation-service.arm.com/static/5f1060dd0daa596235e7ab7a?token=)
+
 [ARM ETMv1-ETMv3 Specification](https://documentation-service.arm.com/static/5f90158b4966cd7c95fd5b5e?token=)
+
 [ARM ETMv4 Specification](https://documentation-service.arm.com/static/60017fbb3f22832ff1d6872b?token=)
+
 [ARM STM-500 Specification](https://documentation-service.arm.com/static/5f106ed80daa596235e81fcc?token=)
+
 [ARM STM Specification](https://documentation-service.arm.com/static/5f1068490daa596235e7f32b?token=)
+
 [ARM SoC-600 Specification](https://documentation-service.arm.com/static/62a1f5ae31ea212bb66231cd?token=)
+
 [ARM SoC-400 Specification](https://documentation-service.arm.com/static/5e7e2ba5b2608e4d7f0a3af8?token=)
+
 [CoreSight Access Library Github](https://github.com/ARM-software/CSAL)
