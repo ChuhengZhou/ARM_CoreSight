@@ -155,21 +155,21 @@ The common process of a registration function is:
 - Can be done either manually via `cs_device_register()` or automatically via `cs_scan_romtable()`.
 <br>
 2. Set CPU affinities if required.
-   - Trace components (pmu, etm, cti) in same core will be linked together and registered in `cs_device.v.debug` by `cs_device_set_affinity()`.
-   - This might be necessary to be configured, but not sure yet. For example, ETM might retrieve data only from PMU on its own core.
+  - Trace components (pmu, etm, cti) in same core will be linked together and registered in `cs_device.v.debug` by `cs_device_set_affinity()`.
+  - This might be necessary to be configured, but not sure yet. For example, ETM might retrieve data only from PMU on its own core.
 <br>
 3. Register ATB connections between trace devices.
-   - Device connection information is stored as the port-related members in `cs_device`.
-   - Can be done through `cs_atb_register()`, indicating from which port a device connects to a port on another device.
+  - Device connection information is stored as the port-related members in `cs_device`.
+  - Can be done through `cs_atb_register()`, indicating from which port a device connects to a port on another device.
 <br>
 4. Register trigger connections between non-CPU devices and CTIs.
-   - CTI connection will be registered in `cs_device.v.cti.src[CTI_MAX_IN_PORTS]` and `cs_device.v.cti.dst[CTI_MAX_IN_PORTS]`
-   - Done by `cs_cti_connect_trigsrc()` and `cs_cti_connect_trigdst()`.
+  - CTI connection will be registered in `cs_device.v.cti.src[CTI_MAX_IN_PORTS]` and `cs_device.v.cti.dst[CTI_MAX_IN_PORTS]`
+  - Done by `cs_cti_connect_trigsrc()` and `cs_cti_connect_trigdst()`.
 <br>
 5. Register `cs_devices_t`, the structure contains all core devices used for tracing.
-   - Trace sink must be registered here. 
-   - It's not necessary to register trace source components if we have already set their CPU affinities for them. This will be dnoe as well in the later trace configuration phase.
-   - `cs_devices_t.cpu_id[]` indicates what type each core on the board is, e.g. Cortex-73. This is only used for printing debugging information as far as I know, not necessary.
+  - Trace sink must be registered here. 
+  - It's not necessary to register trace source components if we have already set their CPU affinities for them. This will be dnoe as well in the later trace configuration phase.
+  - `cs_devices_t.cpu_id[]` indicates what type each core on the board is, e.g. Cortex-73. This is only used for printing debugging information as far as I know, not necessary.
 
 Key structures used for device registration and management:
 
