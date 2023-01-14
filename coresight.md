@@ -1,7 +1,9 @@
 [toc]
 # About
 This documentation is about the basic knowledge of ARM CoreSight Trace Module and CoreSight Access Library from software programmer's perspective. 
+
 Last updated: 30.9.2022
+
 Next iteration: Understand trace formatter.
 
 # ARM Coresight Trace Module
